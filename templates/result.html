@@ -1,0 +1,222 @@
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+  <title>MY SOUND</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='music.png') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+
+  </head>
+  <body>
+    <div id="left-box">
+      <div id="logo-image">
+        <!-- <img src="static/icon_white.png" alt="icon" width="45"> -->
+      My Sound
+      <br><br><br><br>
+
+      <div id='btn-search'>
+      <a href="/" target="_blank">
+      <img src="static/search.png" alt="icon" width="30" id="lib-icon" >
+      検索
+      </a>
+      </div>
+
+      <br>
+      <a href="/library" target="_blank">
+        <img src="static/music_white.png" alt="icon" width="30" id="lib-icon" >
+        My Library
+      </a>
+
+      <br><br>
+      <a href="/sign_in" target="_blank">
+        <img src="static/sign_in_white.png" alt="icon" width="30" id="lib-icon" >
+        ユーザ登録
+      </a>
+
+
+    </div>
+
+    </div>
+    <div id="right-box">
+      <div id='searched_album_image'>
+        <img src="{{searched_track.image_url}}" width="480" height="480">
+      </div>
+
+      <div id='searched_track_info'>
+        <img src="static/track.png" alt="icon" width="30" id="lib-icon" >
+        {{searched_track.track_name}} <br>
+
+        <font color=#B3B3B3>
+          {{searched_track.artist_name}}
+        </font> <br><br>
+
+
+        <a href="{{searched_track.track_url}}" class="play-button" width="32" target="_blank" >再生</a>
+
+        <a class="play-button" width="32" target="_blank" >ライブラリに追加</a>
+
+      </div>
+       <br>
+
+      <div id="recommend_tracks">
+
+        <!--1番目-->
+        <div id='recommend_album_image1'>
+          <img src="{{recommend_tracks[0].image_url}}" width="400" height="400">
+        </div>
+        <div id='recommend_track_info1'>
+          <img src="static/track.png" alt="icon" width="30" id="lib-icon" >
+          {{recommend_tracks[0].track_name}} <br>
+          <font color=#B3B3B3>
+          {{recommend_tracks[0].artist_name}}
+          </font> <br><br>
+
+          <a href="{{recommend_tracks[0].track_url}}" class="play-button" target="_blank" >再生</a>
+          <a class="play-button" width="32" target="_blank" >ライブラリに追加</a>
+        </div>
+
+        <!--2番目-->
+        <div id='recommend_album_image2'>
+          <img src="{{recommend_tracks[1].image_url}}" width="400" height="400">
+        </div>
+        <div id='recommend_track_info2'>
+          <img src="static/track.png" alt="icon" width="30" id="lib-icon" >
+          {{recommend_tracks[1].track_name}} <br>
+          <font color=#B3B3B3>
+          {{recommend_tracks[1].artist_name}}
+          </font> <br><br>
+
+          <a href="{{recommend_tracks[1].track_url}}" class="play-button" target="_blank" >再生</a>
+          <a class="play-button" width="32" target="_blank" >ライブラリに追加</a>
+        </div>
+
+        <!--3番目-->
+        <div id='recommend_album_image3'>
+          <img src="{{recommend_tracks[2].image_url}}" width="400" height="400">
+        </div>
+        <div id='recommend_track_info3'>
+          <img src="static/track.png" alt="icon" width="30" id="lib-icon" >
+          {{recommend_tracks[2].track_name}} <br>
+          <font color=#B3B3B3>
+          {{recommend_tracks[2].artist_name}}
+          </font> <br><br>
+
+          <a href="{{recommend_tracks[2].track_url}}" class="play-button" target="_blank" >再生</a>
+          <a class="play-button" width="32" target="_blank" >ライブラリに追加</a>
+        </div>
+
+        <!--4番目-->
+        <div id='recommend_album_image4'>
+          <img src="{{recommend_tracks[3].image_url}}" width="400" height="400">
+        </div>
+        <div id='recommend_track_info4'>
+          <img src="static/track.png" alt="icon" width="30" id="lib-icon" >
+          {{recommend_tracks[3].track_name}} <br>
+          <font color=#B3B3B3>
+          {{recommend_tracks[3].artist_name}}
+          </font> <br><br>
+
+          <a href="{{recommend_tracks[3].track_url}}" class="play-button" target="_blank" >再生</a>
+          <a class="play-button" width="32" target="_blank" >ライブラリに追加</a>
+        </div>
+
+        <!--5番目-->
+        <div id='recommend_album_image5'>
+          <img src="{{recommend_tracks[4].image_url}}" width="400" height="400">
+        </div>
+        <div id='recommend_track_info5'>
+          <img src="static/track.png" alt="icon" width="30" id="lib-icon" >
+          {{recommend_tracks[4].track_name}} <br>
+          <font color=#B3B3B3>
+          {{recommend_tracks[4].artist_name}}
+          </font> <br><br>
+
+          <a href="{{recommend_tracks[4].track_url}}" class="play-button" target="_blank" >再生</a>
+          <a class="play-button" width="32" target="_blank" >ライブラリに追加</a>
+        </div>
+
+        <!--6番目-->
+        <div id='recommend_album_image6'>
+          <img src="{{recommend_tracks[5].image_url}}" width="400" height="400">
+        </div>
+        <div id='recommend_track_info6'>
+          <img src="static/track.png" alt="icon" width="30" id="lib-icon" >
+          {{recommend_tracks[5].track_name}} <br>
+          <font color=#B3B3B3>
+          {{recommend_tracks[5].artist_name}}
+          </font> <br><br>
+
+          <a href="{{recommend_tracks[5].track_url}}" class="play-button" target="_blank" >再生</a>
+          <a class="play-button" width="32" target="_blank" >ライブラリに追加</a>
+        </div>
+
+        <!--7番目-->
+        <div id='recommend_album_image7'>
+          <img src="{{recommend_tracks[6].image_url}}" width="400" height="400">
+        </div>
+        <div id='recommend_track_info7'>
+          <img src="static/track.png" alt="icon" width="30" id="lib-icon" >
+          {{recommend_tracks[6].track_name}} <br>
+          <font color=#B3B3B3>
+          {{recommend_tracks[6].artist_name}}
+          </font> <br><br>
+
+          <a href="{{recommend_tracks[6].track_url}}" class="play-button" target="_blank" >再生</a>
+          <a class="play-button" width="32" target="_blank" >ライブラリに追加</a>
+        </div>
+
+        <!--8番目-->
+        <div id='recommend_album_image8'>
+          <img src="{{recommend_tracks[7].image_url}}" width="400" height="400">
+        </div>
+        <div id='recommend_track_info8'>
+          <img src="static/track.png" alt="icon" width="30" id="lib-icon" >
+          {{recommend_tracks[7].track_name}} <br>
+          <font color=#B3B3B3>
+          {{recommend_tracks[7].artist_name}}
+          </font> <br><br>
+
+          <a href="{{recommend_tracks[7].track_url}}" class="play-button" target="_blank" >再生</a>
+          <a class="play-button" width="32" target="_blank" >ライブラリに追加</a>
+        </div>
+
+        <!--9番目-->
+        <div id='recommend_album_image9'>
+          <img src="{{recommend_tracks[8].image_url}}" width="400" height="400">
+        </div>
+        <div id='recommend_track_info9'>
+          <img src="static/track.png" alt="icon" width="30" id="lib-icon" >
+          {{recommend_tracks[8].track_name}} <br>
+          <font color=#B3B3B3>
+          {{recommend_tracks[8].artist_name}}
+          </font> <br><br>
+
+          <a href="{{recommend_tracks[8].track_url}}" class="play-button" target="_blank" >再生</a>
+          <a class="play-button" width="32" target="_blank" >ライブラリに追加</a>
+        </div>
+
+        <!--10番目-->
+        <div id='recommend_album_image10'>
+          <img src="{{recommend_tracks[9].image_url}}" width="400" height="400">
+        </div>
+        <div id='recommend_track_info10'>
+          <img src="static/track.png" alt="icon" width="30" id="lib-icon" >
+          {{recommend_tracks[9].track_name}} <br>
+          <font color=#B3B3B3>
+          {{recommend_tracks[9].artist_name}}
+          </font> <br><br>
+
+          <a href="{{recommend_tracks[9].track_url}}" class="play-button" target="_blank" >再生</a>
+          <a class="play-button" width="32" target="_blank" >ライブラリに追加</a>
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+  </body>
+</html>
