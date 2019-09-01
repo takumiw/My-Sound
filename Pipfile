@@ -11,6 +11,8 @@ pandas = "*"
 sklearn = "*"
 matplotlib = "*"
 keras = "*"
+python-dotenv = "*"
+jupyter = "*"
 
 [requires]
 python_version = "3.7"
