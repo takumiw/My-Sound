@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, logging, Response, redirect, 
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import numpy as np
+import os
+from dotenv import load_dotenv
 from collections import OrderedDict
 import json
 import keras
@@ -9,6 +11,12 @@ import tensorflow as tf
 from keras import backend as K
 from keras.models import model_from_json
 import MySQLdb
+
+# 環境変数を読み込む
+load_dotenv('.env')
+env = os.environ
+CLIENT_ID = env['CLIENT_ID']
+CLIENT_SECRET = env['CLIENT_SECRET']
 
 # Flask の起動
 app = Flask(__name__)
@@ -19,8 +27,8 @@ graph = tf.get_default_graph()
 
 class SpotifyAPI:
     def __init__(self):
-        self.client_id = <YOUR CLIEND ID>
-        self.client_secret = <YOUR CLIENT SECREST>
+        self.client_id = CLIENT_ID
+        self.client_secret = CLIENT_SECRET
         self.client_credentials_manager = spotipy.oauth2.SpotifyClientCredentials(self.client_id, self.client_secret)
         self.sp = spotipy.Spotify(client_credentials_manager=self.client_credentials_manager)
         self.market = 'JP'
