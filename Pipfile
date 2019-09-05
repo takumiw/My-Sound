@@ -18,6 +18,7 @@ flask = "*"
 tensorflow = "*"
 mysql-connector-python = "*"
 mysqlclient = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
